@@ -1,0 +1,5 @@
+﻿  projekt.cpp
+c:\users\patryk\documents\visual studio 2015\projects\projekt\projekt\projekt.cpp(33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\patryk\documents\visual studio 2015\projects\projekt\projekt\projekt.cpp(151): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  projekt.vcxproj -> C:\Users\Patryk\Documents\Visual Studio 2015\Projects\projekt\Debug\projekt.exe
+  projekt.vcxproj -> C:\Users\Patryk\Documents\Visual Studio 2015\Projects\projekt\Debug\projekt.pdb (Full PDB)
