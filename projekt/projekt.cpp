@@ -2,6 +2,7 @@
 #include <iostream> 
 #include <conio.h> 
 #include <cstdlib>
+
 using namespace std;
 
 #define ROZMIAR_PLANSZY 40
@@ -122,28 +123,25 @@ void Wczytaj(size_t &wysokosc, size_t &szerokosc, char &x)
 
 	cout << "SZEROKOSC = ";
 	cin >> szerokosc;
-	while (szerokosc>5)
-		{
-			cout << "podaj mniejsza szerokosc"<<endl;
-			cin >> szerokosc;
-		}
+	while (cin.fail() || szerokosc <= 0 || szerokosc > ROZMIAR_PLANSZY / 2 - 1) 
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Zla wartosc." << endl << "szerokosc musi byc wieksza od 0 i mniejsza od " << ROZMIAR_PLANSZY / 2 << " aby figura rysowala sie poprawnie." << endl;
+		cout << "Podaj nowa szerokosc: " << endl;
+		cin >> szerokosc;
+	}
 	cout << "WYSOKOSC = ";
 	cin >> wysokosc;
-	while(wysokosc > 5)
+	while (cin.fail() || wysokosc <= 0 || wysokosc % 2 == 0 || wysokosc > ROZMIAR_PLANSZY / 2 - 1)
 	{
-
-		{
-			cout << "podaj mniejsza wysokosc" << endl;
-			cin >> wysokosc;
-		}
-		
-	 if (wysokosc % 2 == 0)
-		{
-			cout << "Podaj liczbe nieparzysta" << endl;
-			cin >> wysokosc;
-		}
-		
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Zla wartosc." << endl << "szerokosc musi byc wieksza od 0 i mniejsza od " << ROZMIAR_PLANSZY / 2 << "  oraz byc nieparzysta aby figura rysowala sie poprawnie." << endl;
+		cout << "Podaj nowa wysokosc: " << endl;
+		cin >> wysokosc;
 	}
+	
 	
 	cout << endl;
 }
