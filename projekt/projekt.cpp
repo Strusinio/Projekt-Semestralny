@@ -26,6 +26,8 @@ int main()
 	int punktX = 0, punktY = 0;
 	char x;
 	
+	
+	
 
 	menu();
 	Wczytaj(wysokosc, szerokosc, x);
@@ -96,6 +98,7 @@ int main()
 
 void menu()
 {
+	cout << "PATRYK KASZUBOWSKI\t nr indeksu 16219" << endl;
 	cout << "Napisz program rysowania znakiem ASCII ponizszej figury: " << endl;
 	cout << "      *		   "<< endl;
 	cout << "        *         "<< endl;
@@ -113,14 +116,34 @@ void menu()
 
 void Wczytaj(size_t &wysokosc, size_t &szerokosc, char &x)
 {
+	
 	cout << "ZNAK : ";
 	cin >> x;
 
 	cout << "SZEROKOSC = ";
 	cin >> szerokosc;
-
+	while (szerokosc>5)
+		{
+			cout << "podaj mniejsza szerokosc"<<endl;
+			cin >> szerokosc;
+		}
 	cout << "WYSOKOSC = ";
 	cin >> wysokosc;
+	while(wysokosc > 5)
+	{
+
+		{
+			cout << "podaj mniejsza wysokosc" << endl;
+			cin >> wysokosc;
+		}
+		
+	 if (wysokosc % 2 == 0)
+		{
+			cout << "Podaj liczbe nieparzysta" << endl;
+			cin >> wysokosc;
+		}
+		
+	}
 	
 	cout << endl;
 }
